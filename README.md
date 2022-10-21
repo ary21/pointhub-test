@@ -38,6 +38,14 @@ yarn start
 |PUT|`/api/users/:id`|update a user by id|
 |DELETE|`/api/users/:id`|delete a user by id|
 
+example form data :
+```
+{
+  "name": "Budi",
+  "phone": "0890000",
+  "email": "budi@email.com"
+}
+```
 
 ### Structure :
 ```

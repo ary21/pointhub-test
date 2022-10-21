@@ -10,7 +10,7 @@ export const findAll = async () => {
 }
 
 export const findOne = async (filter = {}) => {
-  return userRepository.findOne(filter);
+  return userRepository.findOneBy(filter);
 }
 
 export const insert = async (user: UserDTO) => {

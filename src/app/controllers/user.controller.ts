@@ -12,7 +12,7 @@ export const getAllUserHandler = async (req, res, next) => {
 
 export const getByIdUserHandler = async (req, res, next) => {
   try {
-    const user = await userDao.findOne(+req.params.id);
+    const user = await userDao.findOne({ id: +req.params.id });
 
     return res.json(user);
   } catch (err) {
