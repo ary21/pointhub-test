@@ -1,12 +1,10 @@
 import express from 'express';
+import StatusCodes from "http-status-codes";
 import bodyParser from './middlewares/bodyParser';
 import { AppDataSource } from '../repositories/type-orm/dataSource';
-import { userRoutes } from './routes/user';
+import router from './routes';
 
 export const app = express();
-
-app.use(bodyParser);
-app.use('/users', userRoutes);
 
 AppDataSource.initialize()
   .then(() => {
@@ -14,10 +12,16 @@ AppDataSource.initialize()
   })
   .catch((error) => console.log(error))
 
+app.use(bodyParser);
+app.use('/api', router);
+app.get('/', (_req, res, _next) => {
+  res.sendStatus(StatusCodes.NO_CONTENT);
+});
+
 // Port can be configured in .env file
 const port = process.env.PORT || 5000;
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
-  });
-}
+const server = app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
+
+export default server;

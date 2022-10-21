@@ -29,14 +29,14 @@ yarn start
 
 ### Ready Endpoint :
 
-|`/users`||||
+|`/api/users`||||
 |-|-|-|-|
 |**Method**|**Route**|**Description**|
-|GET|`/users/:id`|get a user by id|
-|GET|`/users`|get all users|
-|POST|`/users`|create a user|
-|PUT|`/users/:id`|update a user by id|
-|DELETE|`/users/:id`|delete a user by id|
+|GET|`/api/users/:id`|get a user by id|
+|GET|`/api/users`|get all users|
+|POST|`/api/users`|create a user|
+|PUT|`/api/users/:id`|update a user by id|
+|DELETE|`/api/users/:id`|delete a user by id|
 
 
 ### Structure :

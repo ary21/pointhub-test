@@ -4,11 +4,8 @@ import { UserEntity } from "./entities/user.entity"
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  host: "localhost",
-  port: 5432,
-  username: "root",
-  password: "admin",
-  database: "test",
+  ssl: true,
+  url: process.env.DB_URL,
   entities: [UserEntity],
   synchronize: true,
   logging: false,
